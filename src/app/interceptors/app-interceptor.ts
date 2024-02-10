@@ -13,9 +13,10 @@ export function useApplayAppInterceptor() {
       (response) => response,
       (error: AxiosError) => {
         // обработка ошибок
-        if (error.response?.status === 403) {
-          // routerReplace(ROUTER_PATHS[403]);
-        }
+        // if (error.response?.status === 403) {
+        // }
+        routerReplace('/500');
+
         throw error;
       },
     );
